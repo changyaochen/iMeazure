@@ -1,0 +1,20 @@
+[reest_time_1min]
+Class="Function"
+Prototype="int reest_time_1min();"
+
+[SIM965_initializeN1]
+Class="Function"
+Prototype="void SIM965_initializeN1();"
+
+[SIM965_initializeN2]
+Class="Function"
+Prototype="void SIM965_initializeN2();"
+
+[SIM965N1_set]
+Class="Function"
+Prototype="void SIM965N1_set(double frequency);"
+
+[SIM965N2_set]
+Class="Function"
+Prototype="void SIM965N2_set(double frequency);"
+

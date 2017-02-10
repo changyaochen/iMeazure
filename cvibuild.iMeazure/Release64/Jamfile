@@ -1,0 +1,87 @@
+TargetFileVersion = "1.0.0.0" ;
+TargetProdVersion = "1.0.0.0" ;
+HDRS = 	"c:\\program files (x86)\\national instruments\\cvi2013\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\include"
+	"C:\\ProgramData\\National Instruments\\CVI2013\\include"
+	"C:\\ProgramData\\National Instruments\\CVI\\include"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\include\\ansi"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\include\\clang\\2.9"
+	"C:\\Program Files\\IVI Foundation\\IVI\\Include"
+	"C:\\Program Files\\IVI Foundation\\VISA\\win64\\include"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\sdk\\include"
+	"c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\activex\\word"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\activex\\excel"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\custctrl"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\custctrl\\custsupp"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\cvirtsup"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\datasock"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\daqUtil"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\printing"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\toolbox"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\reportgen"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\localui"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\instr"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl\\custsupp"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\instr"
+	"C:\\ProgramData\\National Instruments\\CVI2013\\instr"
+	"c:\\Program Files (x86)\\National Instruments\\CVI2013\\bin"
+	"c:\\ProgramData\\National Instruments\\CVI2013\\bin"
+	"c:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\Bin"
+	;
+include Jamfile_instr ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\Agilent33220A.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\Agilent33220A.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\Agilent33220A.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\AMI_2D_magnet.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\AMI_2D_magnet.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\AMI_2D_magnet.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\AMI_magnet.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\AMI_magnet.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\AMI_magnet.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\Anritsu_68369.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\Anritsu_68369.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\Anritsu_68369.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\CS4_magnet.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\CS4_magnet.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\CS4_magnet.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\DAC.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\DAC.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\DAC.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\E4402B.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\E4402B.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\E4402B.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\E5062.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\E5062.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\E5062.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\fl6060.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\fl6060.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\fl6060.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\HP34401A.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\HP34401A.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\HP34401A.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\iMeazure_interface.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\iMeazure_interface.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\iMeazure_interface.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\iMeazure_logic.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\iMeazure_logic.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\iMeazure_logic.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\IPS120_magnet.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\IPS120_magnet.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\IPS120_magnet.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\KE2400#1.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\KE2400#1.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\KE2400#1.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\KE2400#2.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\KE2400#2.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\KE2400#2.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\KEITHLEY_2000.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\KEITHLEY_2000.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\KEITHLEY_2000.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\lakeshore340.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\lakeshore340.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\lakeshore340.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\PPMS.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\PPMS.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\PPMS.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\SIM928.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\SIM928.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\SIM928.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\SIM965.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\SIM965.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\SIM965.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\SIM970.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\SIM970.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\SIM970.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\SR830.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\SR830.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\SR830.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\TWO_KE2400s.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\TWO_KE2400s.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\TWO_KE2400s.obj" ;
+Object "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\YOKO.obj" : "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\YOKO.c" ;
+PrjObjects += "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\cvibuild.iMeazure\\Release64\\YOKO.obj" ;
+Object resources.res : resources.in.rc ;
+MainFromObjects "iMeazure.exe" : $(PrjObjects) $(InstrObjects) ;
+Depends "iMeazure.exe" : link_options.txt ;
+Depends "iMeazure.exe" : resources.res ;
+Depends resources.res :  "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\iMeazure_interface.uir" ;
+Depends all : "iMeazure.exe" ;

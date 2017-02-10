@@ -1,0 +1,16 @@
+[ips120_initialize]
+Class="Function"
+Prototype="void ips120_initialize();"
+
+[ips120_get_field]
+Class="Function"
+Prototype="double ips120_get_field();"
+
+[ips120_stop_sweep]
+Class="Function"
+Prototype="void ips120_stop_sweep();"
+
+[ips120_ramp]
+Class="Function"
+Prototype="void ips120_ramp(double target, double rate);"
+

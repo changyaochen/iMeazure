@@ -1,0 +1,172 @@
+[fl6060_initialize]
+Class="Function"
+Prototype="void fl6060_initialize();"
+
+[fl6060_set_freq]
+Class="Function"
+Prototype="void fl6060_set_freq(double freq);"
+
+[fl6060_init]
+Class="Function"
+Prototype="int fl6060_init(int addr, int id_query, int rest, int *instrID);"
+
+[fl6060_read_attenuation]
+Class="Function"
+Prototype="int fl6060_read_attenuation(int instrID, int *attenuation);"
+
+[fl6060_write_attenuation]
+Class="Function"
+Prototype="int fl6060_write_attenuation(int instrID, int attenuation);"
+
+[fl6060_self_test]
+Class="Function"
+Prototype="int fl6060_self_test(int instrID, int *AM_FM, int *synthesizer, int *digital, int *filter);"
+
+[fl6060_save_setup]
+Class="Function"
+Prototype="int fl6060_save_setup(int instrID, int source_loc, int location, char *filename);"
+
+[fl6060_load_setup]
+Class="Function"
+Prototype="int fl6060_load_setup(int instrID, int location, char *filename);"
+
+[fl6060_store_panel]
+Class="Function"
+Prototype="int fl6060_store_panel(int instrID, int location);"
+
+[fl6060_recall_panel]
+Class="Function"
+Prototype="int fl6060_recall_panel(int instrID, int source_loc, int location);"
+
+[fl6060_step_size_config]
+Class="Function"
+Prototype="int fl6060_step_size_config(int instrID, double freq, int f_units, double ampl, int a_units, double d_freq, int df_units, int depth);"
+
+[fl6060_step_ex]
+Class="Function"
+Prototype="int fl6060_step_ex(int instrID, int step_parameter, int step_mode);"
+
+[fl6060_instr_disp]
+Class="Function"
+Prototype="int fl6060_instr_disp(int instrID, int control);"
+
+[fl6060_rf_out]
+Class="Function"
+Prototype="int fl6060_rf_out(int instrID, int control);"
+
+[fl6060_interface_mode]
+Class="Function"
+Prototype="int fl6060_interface_mode(int instrID, int error_m, int record_m, int term_m, int valid_m, int unbuf_m);"
+
+[fl6060_fr_mod]
+Class="Function"
+Prototype="int fl6060_fr_mod(int instrID, int ext_control, int int_control, double deviation, int internfreq);"
+
+[fl6060_am_mod]
+Class="Function"
+Prototype="int fl6060_am_mod(int instrID, int ext_control, int int_control, int depth, int internfreq);"
+
+[fl6060_frequency]
+Class="Function"
+Prototype="int fl6060_frequency(int instrID, double freq, int f_units);"
+
+[fl6060_amplitude]
+Class="Function"
+Prototype="int fl6060_amplitude(int instrID, double ampl, int a_units);"
+
+[fl6060_level_correction]
+Class="Function"
+Prototype="int fl6060_level_correction(int instrID, int corr_select);"
+
+[fl6060_reset]
+Class="Function"
+Prototype="int fl6060_reset(int instrID, int reset_select);"
+
+[fl6060_error_query]
+Class="Function"
+Prototype="int fl6060_error_query(int instrID, int *error, int uncal);"
+
+[fl6060_revision]
+Class="Function"
+Prototype="int fl6060_revision(int instrID, char *vxipp_rev, char *driver_rev, char *instr_rev, char *minfw_rev);"
+
+[fl6060_error_message]
+Class="Function"
+Prototype="int fl6060_error_message(int err, char *message);"
+
+[fl6060_report_uncal]
+Class="Function"
+Prototype="int fl6060_report_uncal(int instrID, int report_select);"
+
+[fl6060_send_message]
+Class="Function"
+Prototype="int fl6060_send_message(int instrID, char *cmd_string);"
+
+[fl6060_receive_message]
+Class="Function"
+Prototype="int fl6060_receive_message(int instrID, int numbytes, char *in_buff, int *bytes_read);"
+
+[fl6060_close]
+Class="Function"
+Prototype="int fl6060_close(int instrID);"
+
+[fl6060_open_instr]
+Class="Function"
+Prototype="int fl6060_open_instr(int addr, int *ID);"
+
+[fl6060_close_instr]
+Class="Function"
+Prototype="int fl6060_close_instr(int instrID);"
+
+[fl6060_status]
+Class="Function"
+Prototype="int fl6060_status(int instrID);"
+
+[fl6060_err_query]
+Class="Function"
+Prototype="int fl6060_err_query(int instrID, int *error, int uncal);"
+
+[fl6060_invalid_integer_range]
+Class="Function"
+Prototype="int fl6060_invalid_integer_range(int val, int min, int max, int err_code);"
+
+[fl6060_invalid_longint_range]
+Class="Function"
+Prototype="int fl6060_invalid_longint_range(long val, long min, long max, int err_code);"
+
+[fl6060_invalid_real_range]
+Class="Function"
+Prototype="int fl6060_invalid_real_range(double val, double min, double max, int err_code);"
+
+[fl6060_device_closed]
+Class="Function"
+Prototype="int fl6060_device_closed(int instrID);"
+
+[fl6060_read_data]
+Class="Function"
+Prototype="int fl6060_read_data(int instrID, char *buf, int cnt);"
+
+[fl6060_write_data]
+Class="Function"
+Prototype="int fl6060_write_data(int instrID, char *buf, int cnt);"
+
+[fl6060_read_data_file]
+Class="Function"
+Prototype="int fl6060_read_data_file(int instrID, char *filename);"
+
+[fl6060_write_data_file]
+Class="Function"
+Prototype="int fl6060_write_data_file(int instrID, char *filename);"
+
+[fl6060_set_timeout]
+Class="Function"
+Prototype="int fl6060_set_timeout(int instrID, int tmo_code, int *old_timeout);"
+
+[fl6060_setup_err_messages]
+Class="Function"
+Prototype="void fl6060_setup_err_messages();"
+
+[fl6060_setup_arrays]
+Class="Function"
+Prototype="void fl6060_setup_arrays();"
+

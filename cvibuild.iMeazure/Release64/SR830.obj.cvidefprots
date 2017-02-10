@@ -1,0 +1,48 @@
+[sr830_initialize_1]
+Class="Function"
+Prototype="void sr830_initialize_1();"
+
+[sr830_initialize_2]
+Class="Function"
+Prototype="void sr830_initialize_2();"
+
+[sr850_initialize]
+Class="Function"
+Prototype="void sr850_initialize();"
+
+[sr830_readch1_1]
+Class="Function"
+Prototype="double sr830_readch1_1();"
+
+[sr830_readch1_2]
+Class="Function"
+Prototype="double sr830_readch1_2();"
+
+[sr830_readch2_2]
+Class="Function"
+Prototype="double sr830_readch2_2();"
+
+[sr850_set_freq]
+Class="Function"
+Prototype="void sr850_set_freq(double frequency);"
+
+[sr850_set_amp]
+Class="Function"
+Prototype="void sr850_set_amp(double amplitude);"
+
+[sr850_set_aux1_volt]
+Class="Function"
+Prototype="void sr850_set_aux1_volt(double voltage);"
+
+[sr850_set_aux2_volt]
+Class="Function"
+Prototype="void sr850_set_aux2_volt(double voltage);"
+
+[sr850_set_aux3_volt]
+Class="Function"
+Prototype="void sr850_set_aux3_volt(double voltage);"
+
+[sr850_set_aux4_volt]
+Class="Function"
+Prototype="void sr850_set_aux4_volt(double voltage);"
+

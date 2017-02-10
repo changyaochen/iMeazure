@@ -1,0 +1,16 @@
+[magnet_initialize]
+Class="Function"
+Prototype="void magnet_initialize();"
+
+[magnet_get_field]
+Class="Function"
+Prototype="double magnet_get_field();"
+
+[magnet_stop_sweep]
+Class="Function"
+Prototype="void magnet_stop_sweep();"
+
+[magnet_ramp]
+Class="Function"
+Prototype="void magnet_ramp(double target, double rate);"
+

@@ -1,0 +1,20 @@
+[ppms_initialize]
+Class="Function"
+Prototype="void ppms_initialize();"
+
+[ppms_get_temp]
+Class="Function"
+Prototype="double ppms_get_temp();"
+
+[ppms_get_field]
+Class="Function"
+Prototype="double ppms_get_field();"
+
+[ppms_stop_sweep]
+Class="Function"
+Prototype="void ppms_stop_sweep();"
+
+[ppms_ramp]
+Class="Function"
+Prototype="void ppms_ramp(double target, double rate);"
+

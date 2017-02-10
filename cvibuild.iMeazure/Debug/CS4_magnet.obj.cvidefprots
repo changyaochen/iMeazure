@@ -1,0 +1,16 @@
+[cs4_initialize]
+Class="Function"
+Prototype="void cs4_initialize();"
+
+[cs4_get_field]
+Class="Function"
+Prototype="double cs4_get_field();"
+
+[cs4_stop_sweep]
+Class="Function"
+Prototype="void cs4_stop_sweep();"
+
+[cs4_ramp]
+Class="Function"
+Prototype="void cs4_ramp(double llimit, double ulimit, double rate, int direction);"
+

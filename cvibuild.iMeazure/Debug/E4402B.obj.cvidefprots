@@ -1,0 +1,36 @@
+[E4402delay]
+Class="Function"
+Prototype="void E4402delay(double mseconds);"
+
+[E4402B_initialize]
+Class="Function"
+Prototype="void E4402B_initialize();"
+
+[E4402B_set_low]
+Class="Function"
+Prototype="void E4402B_set_low(double frequency);"
+
+[E4402B_set_high]
+Class="Function"
+Prototype="void E4402B_set_high(double frequency);"
+
+[E4402B_average]
+Class="Function"
+Prototype="void E4402B_average(int average);"
+
+[E4402B_points]
+Class="Function"
+Prototype="void E4402B_points(int points);"
+
+[E4402B_time]
+Class="Function"
+Prototype="void E4402B_time(double time);"
+
+[E4402B_measure_ch1]
+Class="Function"
+Prototype="void E4402B_measure_ch1();"
+
+[E4402B_measure_ch1_single_amp]
+Class="Function"
+Prototype="double E4402B_measure_ch1_single_amp(int point);"
+

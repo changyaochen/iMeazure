@@ -1,0 +1,8 @@
+[KE2400N2_initialize]
+Class="Function"
+Prototype="void KE2400N2_initialize();"
+
+[KE2400N2_set]
+Class="Function"
+Prototype="void KE2400N2_set(double voltage);"
+

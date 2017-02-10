@@ -1,0 +1,8 @@
+[lakeshore340_init]
+Class="Function"
+Prototype="void lakeshore340_init();"
+
+[lakeshore340_readtemp]
+Class="Function"
+Prototype="double lakeshore340_readtemp();"
+

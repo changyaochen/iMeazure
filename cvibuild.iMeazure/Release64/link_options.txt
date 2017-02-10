@@ -1,0 +1,61 @@
+-nologo
+-out:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\iMeazure.exe
+-arch:x64
+-timestamp
+-loadextmod
+-res:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\resources.res
+-entry:CVIWinMainStartupCode
+-base:0x400000
+-linked:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\linkersummary.txt
+-dlldeps:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\dlldependencies.txt
+-licensing:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\linkerlicensing.txt
+-browsedeps:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\moduledependencies.txt
+-stackreserve:1048576
+-stackcommit:4096
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\Agilent33220A.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\AMI_2D_magnet.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\AMI_magnet.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\Anritsu_68369.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\CS4_magnet.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\DAC.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\E4402B.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\E5062.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\fl6060.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\HP34401A.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\iMeazure_interface.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\iMeazure_logic.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\IPS120_magnet.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\KE2400#1.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\KE2400#2.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\KEITHLEY_2000.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\lakeshore340.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\PPMS.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\SIM928.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\SIM965.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\SIM970.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\SR830.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\TWO_KE2400s.obj
+-in:c:\Users\cnmuser\Desktop\iMeazure_v91_cc\cvibuild.iMeazure\Release64\YOKO.obj
+-more:c:\program files (x86)\national instruments\cvi2013\bin\msvc64\cvistart.lib
+-more:c:\program files (x86)\national instruments\cvi2013\bin\msvc64\cvi.lib
+-more:c:\program files (x86)\national instruments\cvi2013\sdk\lib\msvc64\advapi32.lib
+-more:c:\ProgramData\National Instruments\CVI2013\bin\msvc64\analysis.lib
+-more:c:\Program Files (x86)\National Instruments\CVI2013\bin\msvc64\cviauto.lib
+-more:c:\Program Files (x86)\National Instruments\CVI2013\bin\msvc64\cviddc.lib
+-more:c:\Program Files (x86)\National Instruments\CVI2013\bin\msvc64\cvidotnet.lib
+-more:c:\Program Files (x86)\National Instruments\CVI2013\bin\msvc64\cvinetstreams.lib
+-more:c:\Program Files (x86)\National Instruments\CVI2013\bin\msvc64\cvinetv.lib
+-more:c:\Program Files (x86)\National Instruments\CVI2013\bin\msvc64\cvitdms.lib
+-more:c:\program files (x86)\national instruments\cvi2013\sdk\lib\msvc64\gdi32.lib
+-more:c:\Program Files (x86)\National Instruments\CVI2013\bin\msvc64\gpib.lib
+-more:c:\Program Files (x86)\National Instruments\Shared\CVI\Bin\msvc64\ivi.lib
+-more:c:\program files (x86)\national instruments\cvi2013\sdk\lib\msvc64\kernel32.lib
+-more:c:\Program Files (x86)\National Instruments\Shared\CVI\Bin\msvc64\NIDAQmx.lib
+-more:c:\Program Files (x86)\National Instruments\Shared\CVI\Bin\msvc64\nisyscfg.lib
+-more:c:\Program Files (x86)\National Instruments\CVI2013\bin\msvc64\omp.lib
+-more:c:\Program Files (x86)\National Instruments\Shared\CVI\Bin\msvc64\smt.lib
+-more:c:\Program Files (x86)\National Instruments\CVI2013\toolslib\toolbox\msvc64\toolbox.obj
+-more:c:\program files (x86)\national instruments\cvi2013\sdk\lib\msvc64\user32.lib
+-more:c:\program files (x86)\national instruments\cvi2013\sdk\lib\msvc64\uuid.lib
+-more:c:\Program Files (x86)\National Instruments\Shared\CVI\Bin\msvc64\visa.lib
+-more:c:\program files (x86)\national instruments\cvi2013\sdk\lib\msvc64\winmm.lib

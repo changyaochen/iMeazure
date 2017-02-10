@@ -1,0 +1,16 @@
+[XYmagnet_initialize]
+Class="Function"
+Prototype="void XYmagnet_initialize();"
+
+[XYmagnet_update]
+Class="Function"
+Prototype="double XYmagnet_update();"
+
+[XYmagnet_stop_sweep]
+Class="Function"
+Prototype="void XYmagnet_stop_sweep();"
+
+[XYmagnet_ramp]
+Class="Function"
+Prototype="void XYmagnet_ramp(double X_target, double Y_target, double ramp_rate_x, double ramp_rate_y);"
+

@@ -1,0 +1,39 @@
+#include "c:\program files (x86)\national instruments\cvi2013\sdk\include\winver.h"
+
+2 ICON "c:\\program files (x86)\\national instruments\\cvi2013\\bin\\default.ico"
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  65535  "iMeazure_dbg"
+END
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+ FILEFLAGS 0x1L
+ FILEOS VOS__WINDOWS32
+ FILETYPE VFT_APP
+ FILESUBTYPE VFT_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Argonne National Laboratory\0"
+            VALUE "FileDescription", "iMeazure_dbg (Debug x86)\0"
+            VALUE "FileVersion", "1.0\0"
+            VALUE "InternalName", "iMeazure_dbg\0"
+            VALUE "LegalCopyright", "Copyright © Argonne National Laboratory 2015\0"
+            VALUE "OriginalFilename", "iMeazure_dbg.exe\0"
+            VALUE "ProductName", "Argonne National Laboratory iMeazure_dbg\0"
+            VALUE "ProductVersion", "1.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 0x4b0
+    END
+END
+
+iMeazure:interface.uir UIRFileType "c:\\Users\\cnmuser\\Desktop\\iMeazure_v91_cc\\iMeazure_interface.uir"

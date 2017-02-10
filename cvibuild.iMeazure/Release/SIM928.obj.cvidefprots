@@ -1,0 +1,36 @@
+[reest_time]
+Class="Function"
+Prototype="int reest_time();"
+
+[SIM928_initializeN1]
+Class="Function"
+Prototype="void SIM928_initializeN1();"
+
+[SIM928_initializeN2]
+Class="Function"
+Prototype="void SIM928_initializeN2();"
+
+[SIM928_initializeN3]
+Class="Function"
+Prototype="void SIM928_initializeN3();"
+
+[SIM928_initializeN4]
+Class="Function"
+Prototype="void SIM928_initializeN4();"
+
+[SIM928N1_set]
+Class="Function"
+Prototype="void SIM928N1_set(double voltage);"
+
+[SIM928N2_set]
+Class="Function"
+Prototype="void SIM928N2_set(double voltage);"
+
+[SIM928N3_set]
+Class="Function"
+Prototype="void SIM928N3_set(double voltage);"
+
+[SIM928N4_set]
+Class="Function"
+Prototype="void SIM928N4_set(double voltage);"
+

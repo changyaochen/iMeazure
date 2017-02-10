@@ -1,0 +1,611 @@
+[Workspace Header]
+Version = 1300
+Pathname = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/iMeazure.cws"
+CVI Dir = "/c/program files (x86)/national instruments/cvi2013"
+CVI Shared Dir = "/C/Program Files (x86)/National Instruments/Shared/CVI"
+CVI Pub Local Dir = "/C/ProgramData/National Instruments/CVI2013"
+CVI Pub Global Dir = "/C/ProgramData/National Instruments/CVI"
+IVI Standard Root Dir = "/C/Program Files (x86)/IVI Foundation/IVI"
+IVI Standard Root 64-bit Dir = "/C/Program Files/IVI Foundation/IVI"
+VXIplug&play Framework Dir = "/C/Program Files (x86)/IVI Foundation/VISA/winnt"
+VXIplug&play Framework 64-bit Dir = "/C/Program Files/IVI Foundation/VISA/win64"
+Number of Projects = 1
+Active Project = 1
+Project 0001 = "iMeazure.prj"
+Drag Bar Left = 249
+Window Top = 103
+Window Left = 11
+Window Bottom = 1328
+Window Right = 1566
+Maximized = False
+Maximized Children = True
+Max32 Number Of Errors = 20
+Track Include File Dependencies = True
+Prompt For Missing Includes = True
+Stop On First Error File = False
+Bring Up Err Win At Start = True
+Bring Up Err Win For Errors = False
+Save Changes Before Running = "Always"
+Save Changes Before Compiling = "Always"
+Hide Windows = False
+Break At First Statement = False
+Sort Type = "File Name"
+Number of Opened Files = 5
+Window Confinement Region Enabled = True
+MainColumnWidth = 232
+FileDateColumnWidth = 70
+FileSizeColumnWidth = 70
+
+[Project Header 0001]
+Version = 1300
+Don't Update DistKit = False
+Platform Code = 4
+Build Configuration = "Release64"
+Warn User If Debugging Release = 0
+Batch Build Release = True
+Batch Build Debug = True
+
+[File 0001]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/iMeazure_interface.c"
+File Type = "CSource"
+Disk Date = 3509990343
+In Projects = "1,"
+Window Top = 58
+Window Left = 18
+Window Z-Order = 5
+Source Window State = "1,1326,1326,1326,16,22,22,0,3,56,0,49,0,0,0,23,1146,0,1326,16,323,521,1,21,"
+
+[File 0002]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/iMeazure_logic.c"
+File Type = "CSource"
+Disk Date = 3537814340
+In Projects = "1,"
+Window Top = 58
+Window Left = 6
+Window Z-Order = 4
+Source Window State = "1,298,298,298,32,47,32,0,0,56,0,377,0,0,0,23,306,0,357,20,323,521,1,10,"
+
+[File 0003]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/fl6060.c"
+File Type = "CSource"
+Disk Date = 3537815305
+In Projects = "1,"
+Window Top = 227
+Window Left = 105
+Window Z-Order = 3
+Source Window State = "1,152,152,152,34,38,34,0,0,119,0,0,0,0,0,31,63,0,152,34,427,1020,1,0,"
+
+[File 0004]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/fl6060.h"
+File Type = "Include"
+Disk Date = 3537815305
+In Projects = "1,"
+Window Top = 272
+Window Left = 128
+Window Z-Order = 2
+Source Window State = "1,26,26,26,76,77,76,0,0,119,0,0,0,0,0,31,0,0,26,76,427,1020,1,0,"
+
+[File 0005]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/Agilent33220A.c"
+File Type = "CSource"
+Disk Date = 3499457826
+In Projects = "1,"
+Window Top = 58
+Window Left = 6
+Source Window State = "1,6,6,6,4,69,4,0,3,0,0,0,0,0,0,0,0,0,6,69,323,521,1,0,"
+
+[File 0006]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/AMI_2D_magnet.c"
+File Type = "CSource"
+Disk Date = 3444482414
+In Projects = "1,"
+Window Top = 346
+Window Left = 87
+Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+
+[File 0007]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/AMI_magnet.c"
+File Type = "CSource"
+Disk Date = 3444482412
+In Projects = "1,"
+Window Top = 212
+Window Left = 102
+Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+
+[File 0008]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/Anritsu_68369.c"
+File Type = "CSource"
+Disk Date = 3444482412
+In Projects = "1,"
+Window Top = 317
+Window Left = 151
+Source Window State = "1,25,25,25,4,51,4,0,3,0,0,0,0,0,0,0,0,0,25,51,427,1020,1,0,"
+
+[File 0009]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/CS4_magnet.c"
+File Type = "CSource"
+Disk Date = 3444482412
+In Projects = "1,"
+Window Top = 34
+Window Left = 235
+Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+
+[File 0010]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/DAC.c"
+File Type = "CSource"
+Disk Date = 3499887077
+In Projects = "1,"
+Window Top = 47
+Window Left = 13
+Source Window State = "1,99,99,99,0,32,32,0,0,0,0,0,0,0,0,0,74,0,89,8,427,1046,1,0,"
+
+[File 0011]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/E4402B.c"
+File Type = "CSource"
+Disk Date = 3533306274
+In Projects = "1,"
+Window Top = 48
+Window Left = 18
+Source Window State = "1,95,95,95,25,26,25,0,0,0,0,0,0,0,0,0,18,0,89,29,349,751,1,0,"
+
+[File 0012]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/E5062.c"
+File Type = "CSource"
+Disk Date = 3444482410
+In Projects = "1,"
+Window Top = 30
+Window Left = 6
+Source Window State = "1,59,59,59,5,17,5,0,0,0,0,0,0,0,0,0,73,0,122,28,323,521,1,0,"
+
+[File 0013]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/HP34401A.c"
+File Type = "CSource"
+Disk Date = 3529940269
+In Projects = "1,"
+Window Top = 58
+Window Left = 18
+Source Window State = "1,52,52,52,22,27,22,0,0,0,0,0,0,0,0,0,39,0,61,24,323,521,1,0,"
+
+[File 0014]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/IPS120_magnet.c"
+File Type = "CSource"
+Disk Date = 3493378560
+In Projects = "1,"
+Window Top = 182
+Window Left = 82
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,57,0,82,17,427,1056,1,0,"
+
+[File 0015]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/KE2400#1.c"
+File Type = "CSource"
+Disk Date = 3444482402
+In Projects = "1,"
+Window Top = 92
+Window Left = 42
+Source Window State = "1,8,8,8,55,60,55,0,0,0,0,5,0,0,0,0,5,0,24,10,349,731,1,10,"
+
+[File 0016]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/KE2400#2.c"
+File Type = "CSource"
+Disk Date = 3444482400
+In Projects = "1,"
+Window Top = 58
+Window Left = 6
+Source Window State = "1,14,14,14,11,26,11,0,0,0,0,0,0,0,0,0,0,0,12,4,349,687,1,0,"
+
+[File 0017]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/KEITHLEY_2000.c"
+File Type = "CSource"
+Disk Date = 3444482400
+In Projects = "1,"
+Window Top = 182
+Window Left = 82
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,25,427,1020,1,0,"
+
+[File 0018]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/lakeshore340.c"
+File Type = "CSource"
+Disk Date = 3444482400
+In Projects = "1,"
+Window Top = 45
+Window Left = 6
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,4,349,687,1,0,"
+
+[File 0019]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/PPMS.c"
+File Type = "CSource"
+Disk Date = 3493378626
+In Projects = "1,"
+Window Top = 48
+Window Left = 18
+Source Window State = "1,43,43,43,42,43,42,0,0,0,0,0,0,0,0,0,13,0,43,42,323,521,1,0,"
+
+[File 0020]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/SIM928.c"
+File Type = "CSource"
+Disk Date = 3444482398
+In Projects = "1,"
+Window Top = 47
+Window Left = 13
+Source Window State = "1,63,68,68,0,5,5,0,0,0,0,0,0,0,0,0,0,0,54,40,427,1020,1,0,"
+
+[File 0021]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/SIM965.c"
+File Type = "CSource"
+Disk Date = 3511357340
+In Projects = "1,"
+Window Top = 92
+Window Left = 36
+Source Window State = "1,82,83,83,0,44,44,0,0,0,0,0,0,0,0,0,6,0,84,49,427,1020,1,0,"
+
+[File 0022]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/SIM970.c"
+File Type = "CSource"
+Disk Date = 3444482398
+In Projects = "1,"
+Window Top = 48
+Window Left = 18
+Source Window State = "1,41,41,41,15,16,15,0,0,0,0,0,0,0,0,0,0,0,34,93,349,751,1,0,"
+
+[File 0023]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/SR830.c"
+File Type = "CSource"
+Disk Date = 3497988898
+In Projects = "1,"
+Window Top = 58
+Window Left = 13
+Source Window State = "1,31,31,31,26,30,26,0,0,0,0,0,0,0,0,0,34,0,49,0,427,1020,1,0,"
+
+[File 0024]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/TWO_KE2400s.c"
+File Type = "CSource"
+Disk Date = 3444482396
+In Projects = "1,"
+Window Top = 186
+Window Left = 90
+Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+
+[File 0025]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/YOKO.c"
+File Type = "CSource"
+Disk Date = 3444482396
+In Projects = "1,"
+Window Top = 58
+Window Left = 18
+Source Window State = "1,9,9,9,59,67,59,0,0,0,0,0,0,0,0,0,0,0,8,17,349,687,1,0,"
+
+[File 0026]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/Agilent33220A.h"
+File Type = "Include"
+Disk Date = 3495204412
+In Projects = "1,"
+Window Top = 47
+Window Left = 13
+Source Window State = "1,16,16,16,5,26,26,0,3,0,0,0,0,0,0,0,0,0,16,5,427,1020,1,0,"
+
+[File 0027]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/AMI_2D_magnet.h"
+File Type = "Include"
+Disk Date = 3444482412
+In Projects = "1,"
+Window Top = 92
+Window Left = 36
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,21,40,427,1020,1,0,"
+
+[File 0028]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/AMI_magnet.h"
+File Type = "Include"
+Disk Date = 3444482412
+In Projects = "1,"
+Window Top = 137
+Window Left = 59
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,18,48,427,1020,1,0,"
+
+[File 0029]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/Anritsu_68369.h"
+File Type = "Include"
+Disk Date = 3444482412
+In Projects = "1,"
+Window Top = 182
+Window Left = 82
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,23,427,1020,1,0,"
+
+[File 0030]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/CS4_magnet.h"
+File Type = "Include"
+Disk Date = 3444482412
+In Projects = "1,"
+Window Top = 48
+Window Left = 18
+Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+
+[File 0031]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/DAC.h"
+File Type = "Include"
+Disk Date = 3493384604
+In Projects = "1,"
+Window Top = 45
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,27,427,1054,1,0,"
+
+[File 0032]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/E4402B.h"
+File Type = "Include"
+Disk Date = 3444482410
+In Projects = "1,"
+Window Top = 45
+Source Window State = "1,7,7,7,25,37,25,0,0,0,0,0,0,0,0,0,0,0,10,36,349,751,1,0,"
+
+[File 0033]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/E5062.h"
+File Type = "Include"
+Disk Date = 3444482410
+In Projects = "1,"
+Window Top = 45
+Window Left = 6
+Source Window State = "1,15,15,15,5,21,21,0,0,0,0,0,0,0,0,0,0,0,13,28,323,521,1,0,"
+
+[File 0034]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/HP34401A.h"
+File Type = "Include"
+Disk Date = 3444482406
+In Projects = "1,"
+Window Top = 58
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,323,521,1,0,"
+
+[File 0035]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/iMeazure_interface.h"
+File Type = "Include"
+Disk Date = 3508350279
+In Projects = "1,"
+Window Top = 58
+Window Left = 18
+Source Window State = "1,160,160,160,0,114,114,0,0,0,0,93,0,0,0,0,153,0,34,39,323,521,1,10,"
+
+[File 0036]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/iMeazure_logic.h"
+File Type = "Include"
+Disk Date = 3509990181
+In Projects = "1,"
+Window Top = 71
+Window Left = 30
+Source Window State = "1,8,8,8,345,357,345,0,0,0,0,0,0,0,0,0,69,0,138,5,323,521,1,12,"
+
+[File 0037]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/IPS120_magnet.h"
+File Type = "Include"
+Disk Date = 3444482402
+In Projects = "1,"
+Window Top = 152
+Window Left = 70
+Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+
+[File 0038]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/KE2400#1.h"
+File Type = "Include"
+Disk Date = 3493661056
+In Projects = "1,"
+Window Top = 58
+Window Left = 13
+Source Window State = "1,7,7,7,57,58,57,0,0,0,0,0,0,0,0,0,0,0,16,81,427,768,1,0,"
+
+[File 0039]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/KE2400#2.h"
+File Type = "Include"
+Disk Date = 3444482400
+In Projects = "1,"
+Window Top = 48
+Window Left = 18
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,336,687,1,0,"
+
+[File 0040]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/KEITHLEY_2000.h"
+File Type = "Include"
+Disk Date = 3444482400
+In Projects = "1,"
+Window Top = 326
+Window Left = 218
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,400,600,1,0,"
+
+[File 0041]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/lakeshore340.h"
+File Type = "Include"
+Disk Date = 3444482400
+In Projects = "1,"
+Window Top = 227
+Window Left = 105
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,55,427,1020,1,0,"
+
+[File 0042]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/PPMS.h"
+File Type = "Include"
+Disk Date = 3444482400
+In Projects = "1,"
+Window Top = 45
+Window Left = 6
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,0,323,521,1,0,"
+
+[File 0043]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/SIM928.h"
+File Type = "Include"
+Disk Date = 3498091654
+In Projects = "1,"
+Window Top = 182
+Window Left = 82
+Source Window State = "1,7,7,7,20,22,20,0,0,0,0,0,0,0,0,0,0,0,7,21,427,1020,1,0,"
+
+[File 0044]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/SIM965.h"
+File Type = "Include"
+Disk Date = 3532975844
+In Projects = "1,"
+Window Top = 137
+Window Left = 59
+Window Z-Order = 1
+Source Window State = "1,9,9,9,14,15,14,0,0,91,0,0,0,0,0,102,0,0,9,15,427,1020,1,7,"
+
+[File 0045]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/SIM970.h"
+File Type = "Include"
+Disk Date = 3498091654
+In Projects = "1,"
+Window Top = 45
+Window Left = 6
+Source Window State = "1,5,5,5,20,22,20,0,0,0,0,0,0,0,0,0,0,0,5,21,349,751,1,0,"
+
+[File 0046]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/SR830.h"
+File Type = "Include"
+Disk Date = 3497988928
+In Projects = "1,"
+Window Top = 58
+Window Left = 6
+Source Window State = "1,27,28,10,27,1,33,0,0,0,0,0,0,0,0,0,0,0,11,63,349,751,1,0,"
+
+[File 0047]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/TWO_KE2400s.h"
+File Type = "Include"
+Disk Date = 3444482396
+In Projects = "1,"
+Window Top = 319
+Window Left = 318
+Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+
+[File 0048]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/YOKO.h"
+File Type = "Include"
+Disk Date = 3444482396
+In Projects = "1,"
+Window Top = 45
+Window Left = 6
+Source Window State = "1,4,4,4,43,50,43,0,0,0,0,0,0,0,0,0,0,0,9,181,349,687,1,0,"
+
+[File 0049]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/ziAPI.h"
+File Type = "Include"
+Disk Date = 3501026260
+In Projects = "1,"
+Window Top = 47
+Window Left = 13
+Source Window State = "1,256,256,256,28,32,28,0,0,0,0,181,0,0,0,0,181,0,222,14,427,1020,1,13,"
+
+[File 0050]
+Path = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/iMeazure_interface.uir"
+File Type = "User Interface Resource"
+Disk Date = 3508930537
+In Projects = "1,"
+Window Top = 146
+Window Left = 18
+Window Height = 809
+Window Width = 1046
+
+[Default Build Config 0001 Debug]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Batch Build = True
+Profile = "Disabled"
+Debugging Level = "Standard"
+Execution Trace = "Disabled"
+Command Line Args = ""
+Working Directory = ""
+Environment Options = ""
+External Process Path = ""
+
+[Default Build Config 0001 Release]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Batch Build = True
+Profile = "Disabled"
+Debugging Level = "Standard"
+Execution Trace = "Disabled"
+Command Line Args = ""
+Working Directory = ""
+Environment Options = ""
+External Process Path = ""
+
+[Default Build Config 0001 Debug64]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Batch Build = True
+Profile = "Disabled"
+Debugging Level = "Standard"
+Execution Trace = "Disabled"
+Command Line Args = ""
+Working Directory = ""
+Environment Options = ""
+External Process Path = ""
+
+[Default Build Config 0001 Release64]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Batch Build = True
+Profile = "Disabled"
+Debugging Level = "Standard"
+Execution Trace = "Disabled"
+Command Line Args = ""
+Working Directory = ""
+Environment Options = ""
+External Process Path = ""
+
+[Build Dependencies 0001]
+Number of Dependencies = 0
+
+[Build Options 0001]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Execution Trace = "Disabled"
+Profile = "Disabled"
+Debugging Level = "Standard"
+Break On Library Errors = True
+Break On First Chance Exceptions = False
+
+[Execution Target 0001]
+Execution Target Address = "Local desktop computer"
+Execution Target Port = 0
+Execution Target Type = 0
+
+[SCC Options 0001]
+Use global settings = True
+SCC Provider = ""
+SCC Project = ""
+Local Path = ""
+Auxiliary Path = ""
+Perform Same Action For .h File As For .uir File = "Ask"
+Perform Same Action For .cds File As For .prj File = "Ask"
+Username = ""
+Comment = ""
+Use Default Username = False
+Use Default Comment = False
+Suppress CVI Error Messages = False
+Always show confirmation dialog = True
+
+[DLL Debugging Support 0001]
+External Process Path = ""
+
+[Command Line Args 0001]
+Command Line Args = ""
+Working Directory = ""
+Environment Options = ""
+
+[Watch 1]
+Watch Expression = "sweep_ch1.type"
+
+[Watch 2]
+Watch Expression = "SW_SR850"
+
+[Watch 3]
+Watch Expression = "SW_FAKE"
+
+[Watch 4]
+Watch Expression = "sweep_ch2.type"
+
+[Watch 5]
+Watch Expression = "sweep_ch2.type==SW_33220A_Freq"
+
+[Watch 6]
+Watch Expression = "sweep_ch2.type==SW_33220A_Amp"
+
+[Distributions]
+Active Index = 1
+AbsCDSPath 0001 = "/c/Users/cnmuser/Desktop/iMeazure_v91_cc/IMeazure.cds"
+RelCDSPath 0001 = "IMeazure.cds"
+

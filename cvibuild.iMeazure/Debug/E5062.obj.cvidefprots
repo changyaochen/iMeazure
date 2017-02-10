@@ -1,0 +1,44 @@
+[delay]
+Class="Function"
+Prototype="void delay(double mseconds);"
+
+[E5062_initialize]
+Class="Function"
+Prototype="void E5062_initialize();"
+
+[E5062_set_low]
+Class="Function"
+Prototype="void E5062_set_low(double frequency);"
+
+[E5062_set_high]
+Class="Function"
+Prototype="void E5062_set_high(double frequency);"
+
+[E5062_average]
+Class="Function"
+Prototype="void E5062_average(int average);"
+
+[E5062_autoscale]
+Class="Function"
+Prototype="void E5062_autoscale();"
+
+[E5062_points]
+Class="Function"
+Prototype="void E5062_points(int points);"
+
+[E5062_time]
+Class="Function"
+Prototype="void E5062_time(double time);"
+
+[E5062_measure_ch1]
+Class="Function"
+Prototype="void E5062_measure_ch1();"
+
+[E5062_measure_ch1_single_amp]
+Class="Function"
+Prototype="double E5062_measure_ch1_single_amp(int point);"
+
+[E5062_measure_ch1_single_phase]
+Class="Function"
+Prototype="double E5062_measure_ch1_single_phase(int point);"
+

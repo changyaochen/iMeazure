@@ -1,0 +1,16 @@
+[hp34401A_1_initialize]
+Class="Function"
+Prototype="void hp34401A_1_initialize();"
+
+[hp34401A_2_initialize]
+Class="Function"
+Prototype="void hp34401A_2_initialize();"
+
+[hp34401A_1_Measure]
+Class="Function"
+Prototype="long double hp34401A_1_Measure();"
+
+[hp34401A_2_Measure]
+Class="Function"
+Prototype="double hp34401A_2_Measure();"
+

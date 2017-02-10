@@ -1,0 +1,8 @@
+[keithley_initialize]
+Class="Function"
+Prototype="void keithley_initialize();"
+
+[keithley_get_data]
+Class="Function"
+Prototype="double keithley_get_data();"
+

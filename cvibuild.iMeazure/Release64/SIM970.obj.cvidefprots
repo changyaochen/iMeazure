@@ -1,0 +1,32 @@
+[SIM970_CH1_initialize]
+Class="Function"
+Prototype="void SIM970_CH1_initialize();"
+
+[SIM970_CH2_initialize]
+Class="Function"
+Prototype="void SIM970_CH2_initialize();"
+
+[SIM970_CH3_initialize]
+Class="Function"
+Prototype="void SIM970_CH3_initialize();"
+
+[SIM970_CH4_initialize]
+Class="Function"
+Prototype="void SIM970_CH4_initialize();"
+
+[SIM970_CH1_Measure]
+Class="Function"
+Prototype="double SIM970_CH1_Measure();"
+
+[SIM970_CH2_Measure]
+Class="Function"
+Prototype="double SIM970_CH2_Measure();"
+
+[SIM970_CH3_Measure]
+Class="Function"
+Prototype="long double SIM970_CH3_Measure();"
+
+[SIM970_CH4_Measure]
+Class="Function"
+Prototype="long double SIM970_CH4_Measure();"
+

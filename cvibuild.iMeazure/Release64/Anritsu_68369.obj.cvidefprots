@@ -1,0 +1,8 @@
+[Anritsu_68369_initialize]
+Class="Function"
+Prototype="void Anritsu_68369_initialize();"
+
+[Anritsu_68369_set]
+Class="Function"
+Prototype="void Anritsu_68369_set(double frequency);"
+

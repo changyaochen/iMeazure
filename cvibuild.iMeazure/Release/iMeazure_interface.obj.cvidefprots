@@ -1,0 +1,220 @@
+[main]
+Class="Function"
+Prototype="int main(int argc, char **argv);"
+
+[InterfaceInit]
+Class="Function"
+Prototype="void InterfaceInit();"
+
+[Quit]
+Class="Function"
+Prototype="int Quit(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[update]
+Class="Function"
+Prototype="int update(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[cleargraph]
+Class="Function"
+Prototype="int cleargraph(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[save]
+Class="Function"
+Prototype="int save(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[start_sweep_ch1]
+Class="Function"
+Prototype="int start_sweep_ch1(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[Acquire]
+Class="Function"
+Prototype="int Acquire(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[ch1_direction_change]
+Class="Function"
+Prototype="int ch1_direction_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[y_axis_offset_change]
+Class="Function"
+Prototype="int y_axis_offset_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[y_axis_factor_change]
+Class="Function"
+Prototype="int y_axis_factor_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[x_axis_factor_change]
+Class="Function"
+Prototype="int x_axis_factor_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[x_axis_offset_change]
+Class="Function"
+Prototype="int x_axis_offset_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[y1_axis_factor_change]
+Class="Function"
+Prototype="int y1_axis_factor_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[y2_axis_factor_change]
+Class="Function"
+Prototype="int y2_axis_factor_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[y1_axis_offset_change]
+Class="Function"
+Prototype="int y1_axis_offset_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[y2_axis_offset_change]
+Class="Function"
+Prototype="int y2_axis_offset_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[y_axis_type_change]
+Class="Function"
+Prototype="int y_axis_type_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[y1_axis_type_change]
+Class="Function"
+Prototype="int y1_axis_type_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[y2_axis_type_change]
+Class="Function"
+Prototype="int y2_axis_type_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[x_axis_type_change]
+Class="Function"
+Prototype="int x_axis_type_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[rescale]
+Class="Function"
+Prototype="int rescale(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[axis_scale_changed]
+Class="Function"
+Prototype="int axis_scale_changed(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[change_ch1_sweep_type]
+Class="Function"
+Prototype="int change_ch1_sweep_type(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[ch1_rate_up_change]
+Class="Function"
+Prototype="int ch1_rate_up_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[ch1_rate_down_change]
+Class="Function"
+Prototype="int ch1_rate_down_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[ch1_type_change]
+Class="Function"
+Prototype="int ch1_type_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[save_settings]
+Class="Function"
+Prototype="int save_settings(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[load_settings]
+Class="Function"
+Prototype="int load_settings(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[hide_extras]
+Class="Function"
+Prototype="int hide_extras(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[extensions]
+Class="Function"
+Prototype="int extensions(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[do_autobreak]
+Class="Function"
+Prototype="int do_autobreak(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[graph]
+Class="Function"
+Prototype="int graph(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[ch2_type_change]
+Class="Function"
+Prototype="int ch2_type_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[start_sweep_ch2]
+Class="Function"
+Prototype="int start_sweep_ch2(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[change_ch2_sweep_type]
+Class="Function"
+Prototype="int change_ch2_sweep_type(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[ch2_rate_up_change]
+Class="Function"
+Prototype="int ch2_rate_up_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[ch2_rate_down_change]
+Class="Function"
+Prototype="int ch2_rate_down_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[ch2_direction_change]
+Class="Function"
+Prototype="int ch2_direction_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[change_ch3_sweep_type]
+Class="Function"
+Prototype="int change_ch3_sweep_type(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[ch3_rate_up_change]
+Class="Function"
+Prototype="int ch3_rate_up_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[ch3_rate_down_change]
+Class="Function"
+Prototype="int ch3_rate_down_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[ch3_direction_change]
+Class="Function"
+Prototype="int ch3_direction_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[ch3_type_change]
+Class="Function"
+Prototype="int ch3_type_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[start_sweep_ch3]
+Class="Function"
+Prototype="int start_sweep_ch3(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[ch3_mega]
+Class="Function"
+Prototype="int ch3_mega(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[y_color_change]
+Class="Function"
+Prototype="int y_color_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[y1_color_change]
+Class="Function"
+Prototype="int y1_color_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[y2_color_change]
+Class="Function"
+Prototype="int y2_color_change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[Magnet2D_Init]
+Class="Function"
+Prototype="int Magnet2D_Init(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[Sweep_2DMAG]
+Class="Function"
+Prototype="int Sweep_2DMAG(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[Start_Megasweep]
+Class="Function"
+Prototype="int Start_Megasweep(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[mega_time]
+Class="Function"
+Prototype="int mega_time(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[VNA_points]
+Class="Function"
+Prototype="int VNA_points(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[VNA_time]
+Class="Function"
+Prototype="int VNA_time(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+

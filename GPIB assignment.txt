@@ -1,0 +1,19 @@
+GPIB 	Instrument
+2	SIM9xx
+4	Anritsu 68369
+4	HP DMM 34401 #2
+6	HP DMM 34401 #1
+7	Lock-in #1 (SR830)
+8	Lokc-in #2 (SR830, SR844, SR850, Signal Recovery 7280)
+9 	Fluke 6060
+10	Agilent 33220A
+12	Lakeshore 340
+14	SIM9xx (obsolete)
+15	PPMS
+17	Agilent E5062
+18	Agilent E4402B
+20 	Yokogawa voltage sources
+23 	Keithley 2400 #2
+24 	Keithley 2400 #1
+
+	

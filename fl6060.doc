@@ -1,0 +1,2433 @@
+
+                         Fluke 6060 RF Signal Generator
+
+________________________________________________________________________________
+
+  Introduction:
+
+  This instrument driver provides programming support for Fluke 6060 RF Signal
+  Generator.
+  It contains functions for opening, configuring, generating waveform, and
+  closing the instrument.
+
+________________________________________________________________________________
+
+  Assumptions:
+
+  To successfully use this module, the following conditions must be met:
+
+         -  the instrument is connected to the GPIB.
+         -  the GPIB address supplied to the initialize function must match the
+            GPIB address of the instrument.
+         -  there must be at least one unused device name in the handler.
+
+________________________________________________________________________________
+
+  LabWindows Libraries:
+
+  In order to use this instrument driver outside of the LabWindows
+  environment, it must be linked with the following LabWindows libraries:
+
+         -  GPIB Library
+         -  Format and I/O Library
+         -  LabWindows System Library
+
+  National Instruments strongly recommends that you use the LWMAKE utility to
+  build any standalone executable program based on this instrument driver.
+
+________________________________________________________________________________
+
+  Error Codes:
+
+  Error codes are returned as the return value of each instrument driver
+  function. A program should examine this value after each call to an
+  instrument driver function to determine if any error occurred. Possible
+  error codes and their meanings are listed with the corresponding instrument
+  driver function.
+
+________________________________________________________________________________
+
+  How To Use This Document:
+
+  This document is intended to be used as a programming reference manual.
+  It describes each function in the Fluke 6060 RF Signal Generator
+  instrument driver. The functions are listed in alphabetical order with
+  a description of the function, C and BASIC syntax of the function,
+  a description of each parameter, and possible error codes.
+
+________________________________________________________________________________
+
+Function Tree Layout:
+
+   Fluke 6060 RF Signal Generator     Function Name:
+
+      Initialize                      fl6060_init
+      Configuration
+         Waveform Parameters
+            Frequency                 fl6060_frequency
+            Amplitude                 fl6060_amplitude
+         Step Size Configuration      fl6060_step_size_config
+         Interface Mode Config.       fl6060_interface_mode
+         Modulation Functions
+            Amplitude Modulation      fl6060_am_mod
+            Frequency Modulation      fl6060_fr_mod
+         Attenuator Configuration
+            Read Attenuation          fl6060_read_attenuation
+            Write Attenuation         fl6060_write_attenuation
+            Level Correction          fl6060_level_correction
+      Action Functions
+         RF Output                    fl6060_rf_out
+         Execute Step                 fl6060_step_ex
+      Data Functions
+         Store Front Panel            fl6060_store_panel
+         Recall Front Panel           fl6060_recall_panel
+         Save Setup to File           fl6060_save_setup
+         Load Setup From File         fl6060_load_setup
+      Utility Functions
+         Reset                        fl6060_reset
+         Self-Test                    fl6060_self_test
+         Revision                     fl6060_revision
+         Report Uncal                 fl6060_report_uncal
+         Error Query                  fl6060_error_query
+         Error Message                fl6060_error_message
+         Instrument Display           fl6060_instr_disp
+         Send Message                 fl6060_send_message
+         Receive Message              fl6060_receive_message
+      Close                           fl6060_close
+
+________________________________________________________________________________
+
+  Instrument         : Fluke 6060 RF Signal Generator
+
+                      Instrument Name: Fluke 6060 RF Signal Generator
+
+                      Description:     This instrument module provides
+                                       programming support for the
+                                       Fluke 6060.  The module
+                                       is divided into the following
+                                       functions:
+
+                      Functions/Classes:
+
+                      (1) Initialize:
+                          Initialize the instrument and set to default
+                          configuration.
+
+                      (2) Configuration: (Class)
+                          This class contains classes and functions for
+                          the configuration and setup of waveform and
+                          other instrument functions.
+
+                      (3) Action Functions: (Class)
+                          This class contains functions which cause the
+                          instrument to perform an operation - enabling
+                          and disabling RF Output and Step Execution.
+
+                      (4) Data Function: (Class)
+                          This class covers the functions for store and
+                          recall of data containing front panel
+                          settings to a specified memory location of
+                          the Fluke 6060 Generator and save/load this
+                          setting to/from a disk file.
+
+                      (5) Utility Functions: (Class)
+                          This class of functions provides basic
+                          utilities for operating the instrument.
+
+                      (6) Close:
+                          Closes the instrument and takes it off-line.
+
+________________________________________________________________________________
+
+
+                 Following functions are in alphabetical order.
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_am_mod
+
+  C Syntax           : int fl6060_am_mod(Instrument_ID, External_AM,
+                                Internal_AM, AM_Depth , Internal_ModFreq);
+                       int Instrument_ID;
+                       int External_AM;
+                       int Internal_AM;
+                       int AM_Depth ;
+                       int Internal_ModFreq;
+
+  BASIC Syntax       : Error.Code% = fl6060.am.mod(Instrument.ID%, _
+                                External.AM%, Internal.AM%, AM.Depth %, _
+                                Internal.ModFreq%)
+
+  Purpose            : This function specifies the type of AM, its modulation
+                       frequency and depht.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       External AM
+
+                            Description:   Disables/enables external AM
+                                           modulation.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Off      (Default)
+                                           1 - On
+
+                       Internal AM
+
+                            Description:   Disables/enables internal AM
+                                           modulation.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Off      (Default)
+                                           1 - On
+
+                       AM Depth [%]
+
+                            Description:   Specifies the modulation index in
+                                           percent.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 to 99 %
+
+                            Default Value: 30 %
+
+                       Internal Mod-Freq
+
+                            Description:   Selects the internal modulation
+                                           rate.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - 400 Hz
+                                           1 - 1000 Hz  (Default)
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   External AM out of range
+                              -3   Internal AM out of range
+                              -4   AM Depth out of range
+                              -5   Internal Modulation Frequency out of
+                                   range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_amplitude
+
+  C Syntax           : int fl6060_amplitude(Instrument_ID, Amplitude,
+                                Amplitude_Units);
+                       int Instrument_ID;
+                       double Amplitude;
+                       int Amplitude_Units;
+
+  BASIC Syntax       : Error.Code% = fl6060.amplitude(Instrument.ID%, _
+                                Amplitude#, Amplitude.Units%)
+
+  Purpose            : Sets the amplitude of the generated signal in specified
+                       units.
+
+
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Amplitude
+
+                            Description:   Specifies the amplitude of the
+                                           generated signal in volts or in
+                                           dBm.
+
+                            Variable Type: Double
+
+                            Valid Range:   +19.0 to -147.0 dBm if dBm
+                                           selected, 0.01 ÊV to 2.0 V if
+                                           volts selected.
+
+                            Default Value: -10.0 dBm
+
+                            Note: Calibrated range is  +13.0   to  -127.0 dBm
+                                                   or  0.1 ÊV  to  1.0 V.
+
+                       Amplitude Units
+
+                            Description:   Specifies the unit of the
+                                           Amplitude value.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - ÊV
+                                           1 - mV
+                                           2 - Volt
+                                           3 - dB or dBm    (Default)
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   Amplitude out of range
+                              -3   Amplitude Units out of range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_close
+
+  C Syntax           : int fl6060_close(Instrument_ID);
+                       int Instrument_ID;
+
+  BASIC Syntax       : Error.Code% = fl6060.close(Instrument.ID%)
+
+  Purpose            :  Takes the instrument off-line.
+
+                        Note: The  instrument must  be reinitialized
+                              to use it again.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+
+                             221   Unable to close instrument
+                             232   Instrument not initialized
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_error_message
+
+  C Syntax           : int fl6060_error_message(Error_Code, Error_Message);
+                       int Error_Code;
+                       char *Error_Message;
+
+  BASIC Syntax       : Error.Code% = fl6060.error.message(Error.Code%, _
+                                Error.Message$)
+
+  Purpose            :  This function returns string containing error message
+                        for specified error code.
+
+  Parameter List     :
+                       Error Code
+
+                            Description:   Specifies an Error Code to find
+                                           corresponding error message. It
+                                           can be for example non-zero status
+                                           returned by previous function
+                                           call.
+
+                            Variable Type: Integer
+
+                            Default Value: 223
+
+                       Error Message
+
+                            Description:   Contains the error message
+                                           corresponding to specified error
+                                           code passed by Error Code control.
+
+                            Variable Type: String
+
+  Error Codes        :         0   Success
+
+                             290   Unknown error code
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_error_query
+
+  C Syntax           : int fl6060_error_query(Instrument_ID, Error,
+                                Uncalibrated_Output);
+                       int Instrument_ID;
+                       int *Error;
+                       int Uncalibrated_Output;
+
+  BASIC Syntax       : Error.Code% = fl6060.error.query(Instrument.ID%, Error%, _
+                                Uncalibrated.Output%)
+
+  Purpose            :  This function queries the instrument for an error and
+                        returns the response.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Error
+
+                            Description:   Returns the number like an error
+                                           query response.
+
+                            Variable Type: Integer
+
+                       Uncalibrated Output
+
+                            Description:   Selects if the Uncalibrated Output
+                                           will be reported in Error control
+                                           or it will not.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Don't Report     (Default)
+                                           1 - Report
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   Rep. Uncalibrated Output out of range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_fr_mod
+
+  C Syntax           : int fl6060_fr_mod(Instrument_ID, External_FM,
+                                Internal_FM, FM_Deviation_kHz,
+                                Internal_ModFreq);
+                       int Instrument_ID;
+                       int External_FM;
+                       int Internal_FM;
+                       double FM_Deviation_kHz;
+                       int Internal_ModFreq;
+
+  BASIC Syntax       : Error.Code% = fl6060.fr.mod(Instrument.ID%, _
+                                External.FM%, Internal.FM%, FM.Deviation.kHz#, _
+                                Internal.ModFreq%)
+
+  Purpose            : This function specifies the type of FM, its modulation
+                       frequency and deviation.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       External FM
+
+                            Description:   Disables/enables external FM
+                                           modulation.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Off      (Default)
+                                           1 - On
+
+                       Internal FM
+
+                            Description:   Disables/enables internal AM
+                                           modulation.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Off      (Default)
+                                           1 - On
+
+                       FM Deviation [kHz]
+
+                            Description:   Specifies the FM Deviation in kHz.
+
+                            Variable Type: Real
+
+                            Valid Range:   0.0 to 99.9 kHz
+
+                            Default Value: 5.0 kHz
+
+                       Internal Mod-Freq
+
+                            Description:   Selects the internal modulation
+                                           rate.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - 400 Hz
+                                           1 - 1000 Hz  (Default)
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   External FM out of range
+                              -3   Internal FM out of range
+                              -4   FM Deviation out of range
+                              -5   Internal Modulation Frequency out of
+                                   range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_frequency
+
+  C Syntax           : int fl6060_frequency(Instrument_ID, Frequency,
+                                Frequency_Units);
+                       int Instrument_ID;
+                       double Frequency;
+                       int Frequency_Units;
+
+  BASIC Syntax       : Error.Code% = fl6060.frequency(Instrument.ID%, _
+                                Frequency#, Frequency.Units%)
+
+  Purpose            : Sets the frequency of the generated signal in specified
+                       units.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Frequency
+
+                            Description:   Specifies the frequency of the
+                                           generated signal.
+
+                            Variable Type: Double
+
+                            Valid Range:   10.0 kHz to 1050.0 MHz
+
+                            Default Value: 300.0 MHz
+
+                       Frequency Units
+
+                            Description:   Specifies the unit of the
+                                           Frequency value.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Hertz
+                                           1 - kHz
+                                           2 - MHz      (Default)
+                                           3 - GHz
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   Frequency out of range
+                              -3   Frequency Units out of range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_init
+
+  C Syntax           : int fl6060_init(GPIB_Address, ID_Query, Reset_Device,
+                                Instrument_ID);
+                       int GPIB_Address;
+                       int ID_Query;
+                       int Reset_Device;
+                       int *Instrument_ID;
+
+  BASIC Syntax       : Error.Code% = fl6060.init(GPIB.Address%, ID.Query%, _
+                                Reset.Device%, Instrument.ID%)
+
+  Purpose            : This routine performs the following initialization
+                       actions:
+
+                        -  Opens the instrument by storing information about
+                           the instrument in the Instrument Table.
+
+                        -  Performs an identification query.
+
+                        -  Sends initialization commands to the instrument.
+
+                        -  Returns an Instrument ID which is used to
+                           differentiate between instruments of the same model
+                           type. This value will be used to identify the
+                           instrument in subsequent calls.
+
+  Parameter List     :
+                       GPIB Address
+
+                            Description:   Specifies the address on the GPIB
+                                           to be used to communicate
+                                           with the instrument.  This value
+                                           must correspond to the current
+                                           internal setting of the
+                                           instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 to 30
+
+                            Default Value: 1
+
+                            NOTE:  The Default Value of this control should
+                                   be set to the factory default of the
+                                   instrument, however if your instrument's
+                                   actual setting is different this control's
+                                   default should be changed.
+
+                       ID Query
+
+                            Description:   Specifies if an ID Query is sent
+                                           to the instrument during the
+                                           initialization procedure.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 - Do Query     (Default)
+                                           0 - Skip Query
+
+                       Reset Device
+
+                            Description:   Specifies if the instrument is to
+                                           be reset to its power-on settings
+                                           during the initialization
+                                           procedure.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 = Reset Device (Default)
+                                           0 = Don't Reset
+
+                            NOTE: If you do not want the instrument reset.
+                                  Set this control to "Don't Reset" while
+                                  initializing the instrument.
+
+                       Instrument ID
+
+                            Description:   Returns an Instrument ID that is
+                                           used in all subsequent function
+                                           calls to select the instrument at
+                                           the Address specified.
+
+                                           If more than one instrument of the
+                                           same type is used, this value will
+                                           be used to differentiate between
+                                           them. The first instrument
+                                           initialized will be assigned an
+                                           Instrument ID of 1.
+
+                            Variable Type: Integer
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   GPIB Address out of range
+                              -3   ID Query out of range
+                              -4   Reset Device out of range
+
+                             220   Unable to open instrument
+                             221   Unable to close instrument
+                             223   Instrument identification query failed
+                             224   Error clearing instrument
+                             230   Error writing to instrument
+                             231   Error reading from instrument
+                             232   Instrument not initialized
+                             233   Error configuring GPIB address
+                             236   Error interpreting instrument response
+                             239   Error configuring time out
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_instr_disp
+
+  C Syntax           : int fl6060_instr_disp(Instrument_ID, Display_Action);
+                       int Instrument_ID;
+                       int Display_Action;
+
+  BASIC Syntax       : Error.Code% = fl6060.instr.disp(Instrument.ID%, _
+                                Display.Action%)
+
+  Purpose            : Using this function you can operate the instrument
+                       front panel display.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Display Action
+
+                            Description:   Selects the ation to be performed
+                                           on the instrument display.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Display Off
+                                           1 - Display On
+                                           2 - Display Check
+                                           3 - Display SW Revision and ID
+                                           4 - Display GPIB Address
+                                           5 - Display Amplitude in dBm
+                                           6 - Display Amplitude in Volts
+
+                            Default Value: 6 - Display Amplitude in Volts
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   Invalid Parameter for Amplitude Units
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_interface_mode
+
+  C Syntax           : int fl6060_interface_mode(Instrument_ID,
+                                Clear_Error_Mode, Record_Mode);
+                       int Instrument_ID;
+                       int Clear_Error_Mode;
+                       int Record_Mode;
+
+  BASIC Syntax       : Error.Code% = fl6060.interface.mode(Instrument.ID%, _
+                                Clear.Error.Mode%, Record.Mode%)
+
+  Purpose            : This function sets the Error Clear and the Record Modes
+                       of instrument interface.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Clear Error Mode
+
+                            Description:   Disable/enable the clear error
+                                           mode. If disabled, the IEEE-488
+                                           error status is cleared only when
+                                           interrogated. If enabled, the
+                                           error status is cleadred when a
+                                           new message is processed.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Disable  (Default)
+                                           1 - Enable
+
+                       Record Mode
+
+                            Description:   Disable/enable the record mode. If
+                                           disabled, the message unit is a
+                                           command. If enabled, a message
+                                           unit is a record. The message unit
+                                           is the smallest group of
+                                           characters that the Generator
+                                           processes.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Disable  (Default)
+                                           1 - Enable
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   Clear Error Mode out of range
+                              -3   Record Mode out of range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_level_correction
+
+  C Syntax           : int fl6060_level_correction(Instrument_ID,
+                                Level_Correction);
+                       int Instrument_ID;
+                       int Level_Correction;
+
+  BASIC Syntax       : Error.Code% = fl6060.level.correction(Instrument.ID%, _
+                                Level.Correction%)
+
+  Purpose            : Sets the RF Output level correction type.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Level Correction
+
+                            Description:   Specifies the correction to use
+                                           for output signal.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Enable All   (Deafult)
+                                           1 - Disable All
+                                           2 - Disable Attenuators
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   Level Correction out of range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_load_setup
+
+  C Syntax           : int fl6060_load_setup(Instrument_ID, Memory_Location,
+                                Filename);
+                       int Instrument_ID;
+                       int Memory_Location;
+                       char *Filename;
+
+  BASIC Syntax       : Error.Code% = fl6060.load.setup(Instrument.ID%, _
+                                Memory.Location%, Filename$)
+
+  Purpose            : This function loads the front panel setup stored in a
+                       disk file specified by file name to a specified memory
+                       location of the Generator.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Memory Location
+
+                            Description:   Specifies the memory location of
+                                           the Fluke 6060 Generator.
+                                           The memory locations available
+                                           for write operations are 1 through
+                                           50.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to 50
+
+                            Default Value: 1
+
+                       Filename
+                            Input Name:    Filename
+
+                            Description:   File that contains a front panel
+                                           setup that can be written to the
+                                           specified memory location of the
+                                           Generator.
+
+                            Variable Type: String
+
+                            Note: The file contents are 64 characters and one
+                                  End of Record character in an instrument
+                                  specific packed binary format.
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   Memory Location out of range
+                              -3   Invalid filename
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                             504   Open file error
+                             505   Read file error
+                             506   File was empty
+                             507   File contains too many characters
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_read_attenuation
+
+  C Syntax           : int fl6060_read_attenuation(Instrument_ID, Attenuation);
+                       int Instrument_ID;
+                       int *Attenuation;
+
+  BASIC Syntax       : Error.Code% = fl6060.read.attenuation(Instrument.ID%, _
+                                Attenuation%)
+
+  Purpose            : This panel reads the current attenuation of the
+                       Generator RF Output.
+
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Attenuation
+
+                            Description:   Returns the Current Attenuation.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 to 138 dB
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+
+                             230   Error writing to instrument
+                             231   Error reading from instrument
+                             232   Instrument not initialized
+                             236   Error interpreting instrument response
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_recall_panel
+
+  C Syntax           : int fl6060_recall_panel(Instrument_ID, Setting_Select,
+                                Memory_Location);
+                       int Instrument_ID;
+                       int Setting_Select;
+                       int Memory_Location;
+
+  BASIC Syntax       : Error.Code% = fl6060.recall.panel(Instrument.ID%, _
+                                Setting.Select%, Memory.Location%)
+
+  Purpose            : This function recalls the current front panel setup
+                       from the specified memory location of the Generator.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Setting Select
+
+                            Description:   Specifies the type of the front
+                                           panel setting to restore.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Recall Last Setting
+                                           1 - Recall From Memory
+                                           2 - Recall Preset State
+                                           3 - Recall Current State
+
+                            Note: Types of front panel settings are defined
+                                  as follows:
+
+                            0 - Recall Last Setting
+                                Recall from a backup-memory location, that
+                                means after a recall operation it contains
+                                the last front panel setting.
+
+                            1 - Recall From Memory
+                                Recall from internal memory, the location is
+                                specified by Memory Location control.
+
+                            2 - Recall Preset State
+                                Set to the Instrument Preset State.
+
+                            3 - Recall Current State
+                                Set to the present instrument state.
+
+                       Memory Location
+
+                            Description:   Specifies the memory location of
+                                           the front panel information stored
+                                           in the Fluke 6060 Generator
+                                           internal memory.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to 50
+
+                            Default Value: 1
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   Setting Select out of range
+                              -3   Memory Location out of range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_receive_message
+
+  C Syntax           : int fl6060_receive_message(Instrument_ID,
+                                Number_Bytes_To_Read, Read_Buffer,
+                                NumBytes_Read);
+                       int Instrument_ID;
+                       int Number_Bytes_To_Read;
+                       char *Read_Buffer;
+                       int *NumBytes_Read;
+
+  BASIC Syntax       : Error.Code% = fl6060.receive.message(Instrument.ID%, _
+                                Number.Bytes.To.Read%, Read.Buffer$, _
+                                NumBytes.Read%)
+
+  Purpose            : Reads data from instrument buffer and returns it to
+                       the specified variable in memory.
+
+                        Note 1: Because the instrument may return both
+                                numeric and text data in response to
+                                queries this function returns the data in
+                                a string format.
+
+                        Note 2: If valid data is NOT available at the
+                                instrument's output buffer when this
+                                function is called the instrument will
+                                hang up and the function will not return
+                                until it times out. If the time-out is
+                                disabled this function will hang
+                                indefinitely and it may be neccessary to
+                                reboot the computer to break out.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Number Bytes To Read
+
+                            Description:   The number of bytes specified by
+                                           this control should be greater
+                                           than or equal to the number of
+                                           bytes which are to be read from
+                                           the instrument. If the actual
+                                           number of bytes to be read is
+                                           greater than the number this
+                                           control specifies then multiple
+                                           reads will be necessary to empty
+                                           the instrument's output buffer.
+
+                                           If the instrument's output buffer
+                                           is not emptied the instrument may
+                                           return invalid data when future
+                                           reads are performed.
+
+                            Variable Type: Integer
+
+                            Default Value: 50 (See Note 2)
+
+                            Note 1: If NO DATA is available at the
+                                    instrument's output buffer when this
+                                    function is called the instrument will
+                                    hang up and the function will not return
+                                    until it times out. If the time-out is
+                                    disabled, this function will hang
+                                    indefinitely and it may be neccessary to
+                                    reboot the computer.
+
+                            Note 2: If he number of bytes expected is greater
+                                    than 50 the value of this control may be
+                                    increased. If the actual number of bytes
+                                    read is larger than the declared size of
+                                    the read buffer a run-time error will be
+                                    generated.
+
+                       Read Buffer
+
+                            Description:   The incoming data from the
+                                           instrument is placed into this
+                                           variable.
+
+                            Variable Type: String
+
+                            Note 1: Because the Instrument may return both
+                                    numeric and text data in response to
+                                    queries this function returns the data in
+                                    string form.
+
+                            Note 2: This function does not overwrite any old
+                                    data left in the string variable from the
+                                    last time the function was called. String
+                                    data in LabWindows is terminated with an
+                                    ASCII null(Hex 0) and string manipulation
+                                    functions will only recognize data before
+                                    the ASCII null.
+
+                            Note 3: If he number of bytes expected is greater
+                                    than 50 the value of this control may be
+                                    increased. If the actual number of bytes
+                                    read is larger than the declared size of
+                                    the read buffer a run-time error will be
+                                    generated.
+
+                       NumBytes Read
+
+                            Description:   This variable contains the actual
+                                           number of bytes read from the
+                                           instrument. This is the value
+                                           which is returned by ibrd in the
+                                           global variable ibcnt.
+
+                            Variable Type: Integer
+
+                            Note: If the actual number of bytes read is less
+                                  than the number of bytes specified in
+                                  number of bytes to read then the output
+                                  buffer is probably empty. If the number of
+                                  bytes read is 0 and the instrument returns
+                                  a 231 error code the read function failed.
+                                  The most probable cause for the read to
+                                  fail is because there was no data available
+                                  at the instrument's output buffer.
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+
+                             231   Error reading from instrument
+                             232   Instrument not initialized
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_report_uncal
+
+  C Syntax           : int fl6060_report_uncal(Instrument_ID,
+                                Uncalibrated_Output);
+                       int Instrument_ID;
+                       int Uncalibrated_Output;
+
+  BASIC Syntax       : Error.Code% = fl6060.report.uncal(Instrument.ID%, _
+                                Uncalibrated.Output%)
+
+  Purpose            : This function enables/disables Uncalibrated Output
+                       report in functions' Error Code control.
+
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Uncalibrated Output
+
+                            Description:   Selects if the Uncalibrated Output
+                                           will be reported in Error Code
+                                           control of other functions or it
+                                           will not.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Don't Report (Default)
+                                           1 - Report
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   Rep. Uncalibrated Output out of range
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_reset
+
+  C Syntax           : int fl6060_reset(Instrument_ID, Reset_Type);
+                       int Instrument_ID;
+                       int Reset_Type;
+
+  BASIC Syntax       : Error.Code% = fl6060.reset(Instrument.ID%, Reset.Type%)
+
+  Purpose            : This function performes the reset of the selected
+                       generator part.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Reset Type
+
+                            Description:   Selects the part of the instrument
+                                           to clear.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Output Buffer    (Default)
+                                           1 - Clear Error
+                                           2 - Clear Device
+
+                            Note: Reset types are defined as follows:
+
+                            0 - Output Buffer
+                                Clears the IEEE-488 output buffer.
+
+                            1 - Clear Error
+                                Clears the IEEE-488 rejected entry status.
+
+                            2 - Device Clear
+                                Clears the instrument state.
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   Reset Type out of range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_revision
+
+  C Syntax           : int fl6060_revision(Instrument_ID, VPP_Revision,
+                                Instr_Driver_Rev, Firmware_Revision,
+                                Supported_Firmware);
+                       int Instrument_ID;
+                       char *VPP_Revision;
+                       char *Instr_Driver_Rev;
+                       char *Firmware_Revision;
+                       char *Supported_Firmware;
+
+  BASIC Syntax       : Error.Code% = fl6060.revision(Instrument.ID%, _
+                                VPP.Revision$, Instr.Driver.Rev$, _
+                                Firmware.Revision$, Supported.Firmware$)
+
+  Purpose            : This function returns the VPP Specification revision
+                       number of the template on which this driver is based,
+                       revision number of this driver, firmware revision of
+                       the instrument and revision of firmware supported by
+                       this driver.
+
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       VPP Revision
+
+                            Description:   Returns the VXIplug&play System
+                                           Framework revision number.
+
+                            Variable Type: String
+
+
+                       Instr Driver Rev
+
+                            Description:   Returns the Revision Number of
+                                           this instrument driver.
+
+                            Variable Type: String
+
+
+                       Firmware Revision
+
+                            Description:   Returns the revision number of the
+                                           instrument specified by Instrument
+                                           Handle.
+
+                            Variable Type: String
+
+
+                       Supported Firmware
+
+                            Description:   Returns the revision number of the
+                                           instrument firmware which is
+                                           supported by this driver.
+
+                            Variable Type: String
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_rf_out
+
+  C Syntax           : int fl6060_rf_out(Instrument_ID, RF_Output);
+                       int Instrument_ID;
+                       int RF_Output;
+
+  BASIC Syntax       : Error.Code% = fl6060.rf.out(Instrument.ID%, RF.Output%)
+
+  Purpose            : Enables or disables the RF Output of the Generator.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       RF Output
+
+                            Description:   Turn RF output off/on.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Off
+                                           1 - On       (Deafult)
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   RF Output out of range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_save_setup
+
+  C Syntax           : int fl6060_save_setup(Instrument_ID, Setting_Select,
+                                Memory_Location, Filename);
+                       int Instrument_ID;
+                       int Setting_Select;
+                       int Memory_Location;
+                       char *Filename;
+
+  BASIC Syntax       : Error.Code% = fl6060.save.setup(Instrument.ID%, _
+                                Setting.Select%, Memory.Location%, Filename$)
+
+  Purpose            : This function transfers the front panel setup stored
+                       at the specified memory location of the Generator to
+                       the specified disk file.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Setting Select
+
+                            Description:   Specifies the type of the front
+                                           panel setting to save to the file.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Save Last Setting
+                                           1 - Save Setup From Memory
+                                           2 - Save Preset State
+                                           3 - Save Current State
+
+                            Note: Types of front panel settings are defined
+                                  as follows:
+
+                            0 - Save Last Setting
+                                Save setup from a backup-memory location.
+
+                            1 - Save Setup From Memory
+                                Save setup from internal memory, the location
+                                is specified by Memory Location control.
+
+                            2 - Save Preset State
+                                Save the Instrument Preset State.
+
+                            3 - Save Current State
+                                Save the present instrument state.
+
+                       Memory Location
+
+                            Description:   Specifies the memory location of
+                                           the front panel information stored
+                                           in the Fluke 6060 Generator
+                                           internal memory.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to 50
+
+                            Default Value: 1
+
+                       Filename
+                            Output Name:   Filename
+
+                            Description:   Name of the file to store the
+                                           front panel setup.
+
+                            Variable Type: String
+
+                            Note: The file contents are 64 characters and one
+                                  End of Record character in an instrument
+                                  specific packed binary format.
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   Setting Select out of range
+                              -3   Memory Location out of range
+                              -4   Filename is invalid
+
+                             229   Error reading from instrument to file
+                             230   Error writing to instrument
+                             231   Error reading from instrument
+                             232   Instrument not initialized
+                             236   Error interpreting instrument response
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_self_test
+
+  C Syntax           : int fl6060_self_test(Instrument_ID, AM__FM_Test,
+                                Synthesizer_Test, Digital_Test,
+                                Output_Filter_Test);
+                       int Instrument_ID;
+                       int *AM__FM_Test;
+                       int *Synthesizer_Test;
+                       int *Digital_Test;
+                       int *Output_Filter_Test;
+
+  BASIC Syntax       : Error.Code% = fl6060.self.test(Instrument.ID%, _
+                                AM..FM.Test%, Synthesizer.Test%, Digital.Test%, _
+                                Output.Filter.Test%)
+
+  Purpose            : This function initiates a self test and transfers the
+                       results of the self tests to a string, that contains the
+                       self test code. Please see Paragraph 4D-20 of the Fluke
+                       6060 Manual for detailed test code information. If no
+                       error occurred the number 0 is returned in every control.
+                       If any selftest fails, function returns the error code
+                       500 - Self-test failed.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       AM & FM Test
+
+                            Description:   Returns the AM and FM test result.
+                                           If O.K., returns 0.
+
+                            Variable Type: Integer
+
+                            Note: See table 4D-3. AAA Field AM and FM Tests
+                                  in the Instruction Manual for detail
+                                  explanation of a non-zero result of this
+                                  test.
+
+                       Synthesizer Test
+
+                            Description:   Returns the synthesizer test
+                                           result. If O.K., returns 0.
+
+                            Variable Type: Integer
+
+                            Note: See table 4D-4. BBB Field Tests Results
+                                  in the Instruction Manual for detail
+                                  explanation of a non-zero result of this
+                                  test.
+
+                       Digital Test
+
+                            Description:   Returns the digital test result.
+                                           If O.K., returns 0.
+
+                            Variable Type: Integer
+
+                            Note: See table 4D-5. CCC Field Tests Results
+                                  in the Instruction Manual for detail
+                                  explanation of a non-zero result of this
+                                  test.
+
+                       Output Filter Test
+
+                            Description:   Returns the output filter test
+                                           result. If O.K., returns 0.
+
+                            Variable Type: Integer
+
+                            Note: See table 4D-6. DDD Field Tests Results
+                                  in the Instruction Manual for detail
+                                  explanation of a non-zero result of this
+                                  test.
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                             500   Self-test failed
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_send_message
+
+  C Syntax           : int fl6060_send_message(Instrument_ID, Write_Buffer);
+                       int Instrument_ID;
+                       char *Write_Buffer;
+
+  BASIC Syntax       : Error.Code% = fl6060.send.message(Instrument.ID%, _
+                                Write.Buffer$)
+
+  Purpose            : Writes commands and queries to the instrument to modify
+                       parameters and query device settings.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Write Buffer
+
+                            Description:   The user can use this control to
+                                           send common commands and queries
+                                           to the instrument. This control
+                                           can also be used to write any
+                                           valid command to the instrument.
+
+                            Variable Type: String
+
+                            Default Value: "CL"
+
+                            Note 1: The command or query to be sent to the
+                                    instrument may be a literal enclosed
+                                    in double quotes i.e. "*RST" or may be
+                                    contained in a variable of type string.
+
+                            Note 2: If the number of bytes to be written is
+                                    greater than the size of "cmd" in the
+                                    source code then the size of cmd must be
+                                    increased. The original size of cmd is 50
+                                    bytes (#define CMD_LENGTH 50). The
+                                    largest cmd may be declared as is 32,767
+                                    bytes.
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_step_ex
+
+  C Syntax           : int fl6060_step_ex(Instrument_ID, Step_Parameter,
+                                Direction);
+                       int Instrument_ID;
+                       int Step_Parameter;
+                       int Direction;
+
+  BASIC Syntax       : Error.Code% = fl6060.step.ex(Instrument.ID%, _
+                                Step.Parameter%, Direction%)
+
+  Purpose            : Programs a step execution for the specified signal
+                       parameter to the selected direction - up or down.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Step Parameter
+
+                            Description:   Specifies the instrument parameter
+                                           to change stepwise.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Frequency    (Default)
+                                           1 - Amplitude
+                                           2 - FM
+                                           3 - AM
+
+                       Direction
+
+                            Description:   Selects the direction of the step
+                                           execution.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 - Up       (Default)
+                                           0 - Down
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   Step Parameter out of range
+                              -3   Direction out of range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_step_size_config
+
+  C Syntax           : int fl6060_step_size_config(Instrument_ID,
+                                Frequency_Step, Frequency_Units, Amlitude_Step,
+                                Amplitude_Units, Deviation_Step,
+                                Deviation_Units, Step_AM_Depth );
+                       int Instrument_ID;
+                       double Frequency_Step;
+                       int Frequency_Units;
+                       double Amlitude_Step;
+                       int Amplitude_Units;
+                       double Deviation_Step;
+                       int Deviation_Units;
+                       int Step_AM_Depth ;
+
+  BASIC Syntax       : Error.Code% = fl6060.step.size.config(Instrument.ID%, _
+                                Frequency.Step#, Frequency.Units%, _
+                                Amlitude.Step#, Amplitude.Units%, _
+                                Deviation.Step#, Deviation.Units%, _
+                                Step.AM.Depth %)
+
+  Purpose            : This class of functions specifies the parameters that
+                       are changed stepwise. Entering the step sizes does not
+                       execute the step function. The function performes the
+                       configuration of follows:
+
+                                     - Frequency Step Size
+                                     - Amplitude Step Size
+                                     - FM Step Size
+                                     - AM Step Size
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Frequency Step
+
+                            Description:   Specifies the frequency step size
+                                           of the step function.
+
+                            Variable Type: Double
+
+                            Valid Range:   0 to 1050.0 MHz with a resolution
+                                           of 10 Hz.
+
+                            Default Value: 1.0 MHz
+
+                       Frequency Units
+
+                            Description:   Specifies the unit of the
+                                           Frequency Step value.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Hertz
+                                           1 - kHz
+                                           2 - MHz      (Default)
+                                           3 - GHz
+
+                       Amlitude Step
+
+                            Description:   Specifies the amplitude step size
+                                           for the step function in units of
+                                           volts, mV, ÊV  or in dB.
+
+                            Variable Type: Double
+
+                            Valid Range:   0 to 166 dB if dB selected,
+                                           0.0 V to 1999 V if volts selected.
+
+                            Default Value: 1.0 dB
+
+                       Amplitude Units
+
+                            Description:   Specifies the unit of the
+                                           Amplitude Step value.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - ÊV
+                                           1 - mV
+                                           2 - Volt
+                                           3 - dB or dBm    (Default)
+
+                       Deviation Step
+
+                            Description:   Specifies the deviation step size
+                                           for the FM step function.
+
+                            Variable Type: Double
+
+                            Valid Range:   0 to 99.9 kHz
+
+                            Default Value: 100 Hz
+
+                       Deviation Units
+
+                            Description:   Specifies the unit of the
+                                           Deviation Step value.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 - Hertz    (Default)
+                                           1 - kHz
+                                           2 - MHz
+                                           3 - GHz
+
+                       Step AM Depth [%]
+
+                            Description:   Specifies the step size to change
+                                           the modulation index stepwise in
+                                           percent.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 to 99 % with a resolution of 1%
+
+                            Default Value: 1%
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   Frequency out of range
+                              -3   Frequency Units out of range
+                              -4   Amplitude out of range
+                              -5   Amplitude Units out of range
+                              -6   Deviation out of range
+                              -7   Deviation Units out of range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_store_panel
+
+  C Syntax           : int fl6060_store_panel(Instrument_ID, Memory_Location);
+                       int Instrument_ID;
+                       int Memory_Location;
+
+  BASIC Syntax       : Error.Code% = fl6060.store.panel(Instrument.ID%, _
+                                Memory.Location%)
+
+  Purpose            : This function stores the current front panel setup at
+                       the specified memory location of the Generator.
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Memory Location
+
+                            Description:   Specifies the memory location for
+                                           storage of the front panel
+                                           information into the Fluke 6060
+                                           Generator internal memory.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to 50
+
+                            Default Value: 1
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   Memory location out of range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+
+________________________________________________________________________________
+
+  Function Name      : fl6060_write_attenuation
+
+  C Syntax           : int fl6060_write_attenuation(Instrument_ID,
+                                Attenuation_dB);
+                       int Instrument_ID;
+                       int Attenuation_dB;
+
+  BASIC Syntax       : Error.Code% = fl6060.write.attenuation(Instrument.ID%, _
+                                Attenuation.dB%)
+
+  Purpose            : This panel sets the current attenuation of the
+                       Generator RF Output.
+
+
+  Parameter List     :
+                       Instrument ID
+
+                            Description:   Accepts the Instrument ID returned
+                                           by the Initialize function to
+                                           select the desired instrument.
+
+                            Variable Type: Integer
+
+                            Valid Range:   1 to  Maximum Instances of
+                                                 this Instrument
+
+                                           The Maximum Instances of this
+                                           Instrument is the maximum number
+                                           of instruments that can be
+                                           controlled by this driver in a
+                                           single system. The value is set
+                                           internally in the driver. The
+                                           typical value is 10.
+
+                       Attenuation [dB]
+
+                            Description:   Sets the Attenuation. The value
+                                           will be rounded to the nearest
+                                           multiply of 6 dB.
+
+                            Variable Type: Integer
+
+                            Valid Range:   0 to 138 dB
+
+                            Default Value: 0 dB
+
+  Error Codes        :         0   Success
+
+                              -1   Instrument ID out of range
+                              -2   Attenuation out or range
+
+                             230   Error writing to instrument
+                             232   Instrument not initialized
+
+                             3xx   Device-dependent errors (reject entry)
+                             4xx   Uncalibrated output error
+
+                       Note 1: For the explanation of 3xx and 4xx error
+                               codes use Utility function Error Message
+                               or use tables 2-5. and 2-6. in the
+                               Instruction Manual (err 301 is equal to
+                               001 000 000 = FM deviation... etc.).
+
+                       Note 2: The error codes 4xx are reported only if
+                               it is enabled. To enable or disable the
+                               4xx error report use Utility function
+                               Report Uncal.
+
+========= End of Fluke 6060 RF Signal Generator Documentation File =============

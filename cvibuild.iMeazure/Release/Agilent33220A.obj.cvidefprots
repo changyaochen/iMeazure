@@ -1,0 +1,12 @@
+[ag33220a_1_initialize]
+Class="Function"
+Prototype="void ag33220a_1_initialize();"
+
+[ag33220a_set_freq]
+Class="Function"
+Prototype="void ag33220a_set_freq(double frequency);"
+
+[ag33220a_set_amp]
+Class="Function"
+Prototype="void ag33220a_set_amp(double amplitude);"
+

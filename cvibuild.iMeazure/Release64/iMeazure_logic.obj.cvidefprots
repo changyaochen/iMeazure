@@ -1,0 +1,72 @@
+[get_x]
+Class="Function"
+Prototype="void get_x();"
+
+[get_y]
+Class="Function"
+Prototype="void get_y();"
+
+[get_y1]
+Class="Function"
+Prototype="void get_y1();"
+
+[get_y2]
+Class="Function"
+Prototype="void get_y2();"
+
+[Timing]
+Class="Function"
+Prototype="void Timing();"
+
+[Sweep_XYMagnet]
+Class="Function"
+Prototype="void Sweep_XYMagnet();"
+
+[Autobreak_Checks]
+Class="Function"
+Prototype="void Autobreak_Checks();"
+
+[Update_ch1_Sweep]
+Class="Function"
+Prototype="void Update_ch1_Sweep();"
+
+[Update_ch2_Sweep]
+Class="Function"
+Prototype="void Update_ch2_Sweep();"
+
+[Update_ch3_Sweep]
+Class="Function"
+Prototype="void Update_ch3_Sweep();"
+
+[UpdateMegaSweep]
+Class="Function"
+Prototype="void UpdateMegaSweep();"
+
+[Message]
+Class="Function"
+Prototype="void Message(char *str);"
+
+[Init]
+Class="Function"
+Prototype="void Init();"
+
+[E5062_Loop]
+Class="Function"
+Prototype="void E5062_Loop();"
+
+[E4402B_Loop]
+Class="Function"
+Prototype="void E4402B_Loop();"
+
+[MainLoop]
+Class="Function"
+Prototype="void MainLoop();"
+
+[E5062_Mega]
+Class="Function"
+Prototype="void E5062_Mega();"
+
+[E4402B_Mega]
+Class="Function"
+Prototype="void E4402B_Mega();"
+
