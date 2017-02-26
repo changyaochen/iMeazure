@@ -3,6 +3,9 @@ modified by changyao chen
 
 from 9/2014, the latest update is added to the top of this document.
 
+2/25/2017
+start working on potential release from github
+
 3/23/15
 another try to make CH2 downward megasweep available... not work yet...
  
